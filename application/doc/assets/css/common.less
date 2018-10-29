@@ -1,0 +1,103 @@
+
+@import "../../../../components/ui/style/inc/config";
+@import "../../../../components/ui/style/inc/color";
+
+.container {
+    width: @width-screen-max;
+}
+
+// 根据头部是否绝对定位输出样式
+.mixin-body (@v) when (@v) {
+    body {
+        padding-top: (@header-height)+@gutter;
+    }
+}
+
+.mixin-body(@header-fixed);
+
+
+// 头部
+.header {
+
+    @height: @header-height;
+    @height-2x: @height/2;
+    @height-4x: @height/4;
+
+    height: @height;
+
+    & when (@header-fixed) {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+    }
+
+    & when not (@header-fixed) {
+        margin-bottom: @gutter;
+    }
+
+    background-color:#323F56;
+    box-shadow: 0 2px 5px @color-border;
+
+
+    a {
+        text-decoration: none;
+    }
+
+    .logo {
+        height: 50px;
+        margin: @gutter/2 @gutter;
+        float: left;
+        overflow: hidden;
+
+        img {
+            max-height: 50px;
+        }
+    }
+
+    .nav {
+        float: left;
+        height: @height-2x;
+        line-height: @height-2x;
+        margin: @height-4x 0;
+		color: @color-light;
+
+        ul {
+            li {
+                float: left;
+                margin: 0 @gutter*2 0 0;
+				list-style:none;
+
+                a {
+                    color: @color-light;
+
+                    .icon {
+                        color: @color-light;
+                        margin-right: @gutter/4;
+                    }
+
+                    &:hover,
+                    &.current {
+                        color: @color-blue;
+
+                        .icon {
+                            color: @color-blue;
+                        }
+                    }
+                }
+				&.current {
+					a{
+						color: @color-blue;
+
+						.icon {
+							color: @color-blue;
+						}
+					}
+					
+				}
+            }
+        }
+    }
+
+}

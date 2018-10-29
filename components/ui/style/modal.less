@@ -1,0 +1,135 @@
+.modal {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	position: fixed;
+	z-index: 2000;
+	
+  
+	&.is-active {
+		display: block;
+	}
+	
+	.modal-mask {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+	
+
+	.modal-card {
+		border-radius:3px;
+		box-shadow: 0 5px 20px rgba(26,26,26,.2);
+		background:@color-light;
+		position: absolute;
+		width: 400px;
+		left:50%;
+		top:50%;
+		transform: translate(-50%, -50%);
+	}
+
+	
+	.modal-card-close {
+		user-select: none;
+		border: none;
+		border-radius: 50%;
+		position: absolute;
+		right:-@gutter*4;
+		top: @gutter*2;
+		cursor:pointer;
+		
+		svg{
+			vertical-align: top;
+			fill: @color-light;
+		}
+		
+		transition:all 0.3s; 
+		
+		
+		&:hover,
+		&:focus{
+			svg{
+				vertical-align: top;
+				fill: lighten(@color-red,5%);
+			}
+		}
+		
+		&:hover{
+			transform:rotate(90deg);
+		}
+
+		
+	}
+
+	.modal-card-title {
+		border-bottom: 1px solid #dbdbdb;
+		padding: 40px 40px 20px 40px;
+		color: @color-blue;
+		font-size: @font-size-default;
+		font-weight:bold;
+		line-height: 1;
+	}
+
+	
+
+
+	.modal-card-body {
+		overflow: auto;
+		
+		border-radius: 3px;
+		
+		.modal-card-main{
+			padding: 40px 40px;
+		}
+	}
+	
+	.show-title{
+		.modal-card-body {
+			.modal-card-main{
+				padding: 20px 40px 40px 40px;
+			}
+			
+		}
+		
+	}
+	
+	.modal-message-button{
+		margin-top:@gutter*2;
+	}
+
+  
+}
+
+
+.fadeT-enter-active, .fadeT-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fadeT-enter{
+  opacity: 0;
+  transform:translateY(-100px);
+}
+
+.fadeT-enter-to{
+  opacity: 1;
+  transform:translateY(0);
+}
+
+.fadeT-leave{
+  opacity: 1;
+  transform:translateY(0);
+}
+
+.fadeT-leave-to{
+  opacity: 0;
+  transform:translateY(100px);
+}
+
+
+
+
