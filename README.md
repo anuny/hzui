@@ -1,5 +1,8 @@
 # 黑钻前端开发文档
 ------
+
+https://anuny.github.io/hzui/compiled/dist/doc
+
 > * 使用nodejs 自动构建打包的多页面应用
 > * 技术栈 `nodejs` `vue2` `vuex` `vue-router` `webpack` `axios` `Mock` `Less` `ES6`
 > * 紧跟技术潮流，组件化开发，提高用户体验及方便版本迭代
