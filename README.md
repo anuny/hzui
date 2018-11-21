@@ -1,7 +1,7 @@
 # 黑钻前端开发文档
 ------
 
-https://anuny.github.io/hzui/compiled/dist/doc
+https://anuny.github.io/hzui/compiled/dist/doc/index.html
 
 > * 使用nodejs 自动构建打包的多页面应用
 > * 技术栈 `nodejs` `vue2` `vuex` `vue-router` `webpack` `axios` `Mock` `Less` `ES6`
